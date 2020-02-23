@@ -21,8 +21,9 @@ const FormikApp = withFormik({
       .min(9, 'password must be 9 characters or longer')
       .required('Please enter your password')
   }),
-  handleSubmit(values) {
+  handleSubmit(values, { resetForm }) {
     console.log(values);
+    resetForm();
   }
 })(App);
 ReactDOM.render(<FormikApp />, document.getElementById('root'));
